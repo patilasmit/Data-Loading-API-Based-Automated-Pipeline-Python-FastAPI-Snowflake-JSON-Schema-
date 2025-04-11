@@ -1,0 +1,8 @@
+retail_etl_fastapi/
+├── main.py                  ✅ FastAPI app
+├── etl/
+│   ├── cleaner.py           ✅ Data cleaning logic
+│   ├── uploader.py          ✅ Upload to Snowflake
+│   └── scheduler.py         ⏳ Optional - auto run script
+├── .env                     ✅ Snowflake secrets
+├── requirements.txt         ✅ Python packages
