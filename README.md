@@ -1,22 +1,33 @@
 **⚡ Retail Data Pipeline with FastAPI + Snowflake** 
 A real-world Python solution to automate messy CSV uploads into clean, analytics-ready warehouse tables.
 
-**🌟 Project Overview***
-In a fast-paced business world, decision-makers can’t afford to wait on Excel cleanup and manual uploads.
+**🧠 Problem Statement**
+In retail businesses, data analysts and operations teams often receive raw sales data in CSV format from franchises, stores, or partners. 
 
-This project solves that problem with a Python-powered ETL pipeline that takes raw sales data from a CSV file and turns it into business-ready insights in Snowflake — in just one click.
+These files typically contain:
+- Inconsistent date formats
+- Null or missing values
+- Incorrect or mixed data types
+- Duplicate records
+And they require manual uploads to databases like Snowflake. This process is time-consuming, error-prone, and blocks timely insights for business decision-making.
 
-🔄 The pipeline is built using FastAPI + Pandas, and allows users (analysts, managers, engineers) to:
+💡 Why This Matters (Business Challenge)
+📉 Reports and dashboards get delayed due to bad data
 
-Upload raw retail CSVs via a simple API
+⚠️ One timestamp error can crash a full BI pipeline
 
-Automatically clean and transform the data (dates, types, nulls, calculated columns)
+⛔ Analysts waste hours manually cleaning and uploading files
 
-Insert it directly into Snowflake, error-free
-✅ Say goodbye to broken spreadsheets, timestamp errors, and inconsistent formats.
-✅ Result: Clean, analytics-ready data in your Snowflake warehouse — in one click.
+🕵️ Managers can’t make quick decisions without reliable data
 
-👉 This is the kind of backend solution that saves hours of manual work, reduces human error, and makes your data instantly available to BI tools like Power BI and Tableau.
+**✅Solution**
+I designed and built a FastAPI-based Python application that automates this entire process — from raw file to clean data in Snowflake — in under 5 seconds.
+
+🔁 Reusable API to upload any CSV file
+🧼 Automated data cleaning using Pandas: date parsing, type conversion, null handling, and duplicate removal
+💡 Added calculated fields like PROFIT_MARGIN, ORDER_YEAR, IS_DISCOUNTED
+❄️ Seamless integration with Snowflake using the Python connector and secure .env configurations
+💥 Error-handling for edge cases like binding errors, timestamps, NaNs
 
 
 **💥 What Makes This Project Stand Out**
