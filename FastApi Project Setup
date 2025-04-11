@@ -1,0 +1,45 @@
+✅ 1. 🏗 Project Setup
+📁 Navigate to your project directory:
+cd path/to/Retail-Sales-ETL-FastAPI
+
+✅ 2. 🐍 Create and Activate Virtual Environment
+python -m venv venv
+venv\Scripts\activate
+
+✅ 3. 📦 Install Required Python Packages
+pip install -r requirements.txt
+
+Or, if you're creating the file yourself:
+pip install fastapi uvicorn pandas python-dotenv snowflake-connector-python
+pip freeze > requirements.txt
+
+✅ 4. 🔐 Create and Set Up .env File
+In your root(under your api folder of project), create a .env file with:
+
+SNOWFLAKE_USER=your_username
+SNOWFLAKE_PASSWORD=your_password
+SNOWFLAKE_ACCOUNT=your_account_id
+SNOWFLAKE_WAREHOUSE=COMPUTE_WH
+SNOWFLAKE_DATABASE=SALES
+SNOWFLAKE_SCHEMA=PUBLIC
+👉 Don't forget to rename .env.example to .env if you're using a template.
+
+✅ 5. 🚀 Run FastAPI App with Uvicorn
+uvicorn main:app --reload
+
+If port 8000 is already in use:
+uvicorn main:app --reload --port 8001
+
+✅ 6. 🌐 Open FastAPI Swagger Docs
+After the server starts, open your browser and go to:
+http://127.0.0.1:8000/docs
+This lets you upload the CSV from your browser and test your endpoint!
+
+✅ 7. 📤 Upload via Postman (Optional Alternative) -- best option and easy
+
+Method: POST
+URL: http://127.0.0.1:8000/upload-to-snowflake
+Body: form-data
+Key = file
+Type = File
+Value = Select your CSV (e.g., Superstore_Sample.csv)
