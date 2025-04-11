@@ -48,13 +48,9 @@ I designed and built a FastAPI-based Python application that automates this enti
 
 **💥 What Makes This Project Stand Out**
 🔧 FastAPI for creating a robust backend API
-
 🧼 Pandas for powerful, scalable data cleaning
-
 ❄️ Snowflake integration with error-proof insertion logic
-
 ✅ Smart handling of tricky real-world problems (like timestamp binding, nulls, mixed types)
-
 📦 Deployable, testable, and reusable ETL system
 
 
