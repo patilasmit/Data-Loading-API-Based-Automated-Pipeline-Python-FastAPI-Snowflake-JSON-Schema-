@@ -1,8 +1,66 @@
-retail_etl_fastapi/
-├── main.py                  ✅ FastAPI app
-├── etl/
-│   ├── cleaner.py           ✅ Data cleaning logic
-│   ├── uploader.py          ✅ Upload to Snowflake
-│   └── scheduler.py         ⏳ Optional - auto run script
-├── .env                     ✅ Snowflake secrets
-├── requirements.txt         ✅ Python packages
+📁 Final Project Structure
+
+Retail-Sales-ETL-FastAPI/
+│
+├── 📁 etl/                           # 🔧 Core ETL scripts
+│   ├── cleaner.py                   # Cleans the raw CSV (dates, types, nulls, adds calculated fields)
+│   └── uploader.py                  # Connects to Snowflake and uploads the cleaned data
+│
+├── 📁 sample_data/                  # 📂 Example input files
+│   └── Superstore_Sample.csv       # A raw, uncleaned CSV to test the pipeline
+│
+├── main.py                          # 🚀 FastAPI app with endpoint to trigger upload
+├── requirements.txt                 # 📦 Required packages to install
+├── .env.example                     # 🔒 Sample environment variables (Snowflake credentials)
+├── README.md                        # 📘 Full project documentation
+
+
+🧠 What to Put in Each File
+
+✅ README.md — Your Voice to the World(optional)
+Include:
+Project title + badge
+Problem you're solving
+Tech stack
+API usage
+Folder structure (like this one!)
+Real-world use case
+How to run
+
+✅ .env.example (Most Important)
+SNOWFLAKE_USER=your_username
+SNOWFLAKE_PASSWORD=your_password
+SNOWFLAKE_ACCOUNT=your_account_id
+SNOWFLAKE_WAREHOUSE=COMPUTE_WH
+SNOWFLAKE_DATABASE=SALES
+SNOWFLAKE_SCHEMA=PUBLIC
+Don’t commit your real .env, just this sample.
+
+✅ requirements.txt
+fastapi
+uvicorn
+pandas
+python-dotenv
+snowflake-connector-python
+
+You can run this to generate it:
+pip freeze > requirements.txt
+
+✅ main.py
+FastAPI endpoint /upload-to-snowflake
+Accepts file upload via UploadFile
+Passes it to cleaner.py, then to uploader.py
+
+✅ etl/cleaner.py Handles:
+Renaming columns
+Fixing datatypes
+Filling missing values
+Adding new calculated fields like PROFIT_MARGIN, ORDER_YEAR, IS_PROFITABLE
+
+✅ etl/uploader.py Handles:
+Connecting to Snowflake with .env
+Auto-creating table if not exists
+Safely inserting cleaned rows
+
+✅ sample_data/Superstore_Sample.csv
+📁 Include 10–20 rows of real-looking raw data so anyone testing it can try uploading immediately.
