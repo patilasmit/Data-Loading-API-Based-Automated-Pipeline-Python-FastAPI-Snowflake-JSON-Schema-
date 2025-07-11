@@ -1,4 +1,4 @@
-** Data Pipeline with FastAPI + Snowflake** 
+## Data Pipeline with FastAPI + Snowflake 
 A real-world Python solution to automate messy CSV uploads into clean, analytics-ready warehouse tables.
 
 **🧠 Problem Statement**
